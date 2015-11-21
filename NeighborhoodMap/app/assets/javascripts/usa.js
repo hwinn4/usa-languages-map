@@ -13,6 +13,8 @@ $(function(){
 
     var g = svg.append("g");
 
+    var stateColors = {};
+
 
 
     // path data
@@ -45,13 +47,15 @@ $(function(){
 
       }))
       .attr("d", path)
-      .style("fill", function(d, i) { return color(d.color = d3.max(neighbors[i], function(n) { return data[n].color; }) + 1 | 0); })
+      .style("fill", "black")
       .attr("stroke", "white")
       .attr("class", "states")
       .on('click', function(){
         $('.state_name').text(this.id);
         stateInfo(this.id);
-        $(this).css("fill", "cyan");
+        var persisted = $(this).attr('style').split(": ")[1];
+        $('path[style]').css('fill', 'black');
+        $(this).css('fill', 'cyan');
         });
 
     // add state names
@@ -86,8 +90,8 @@ $(function(){
 $(function(){
   $('.state_name').click(function(){
     var stateId = $(this).text();
-    var selector = "#" + stateId
-    $(selector).css("fill", "cyan");
+    var selector = "#" + stateId;
+    // $(this).css("fill", "cyan");
   });
 
 });

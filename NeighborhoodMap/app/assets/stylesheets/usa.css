@@ -17,6 +17,14 @@
       position: absolute;
     }
 
+    .state_color {
+      color: inherit;
+    }
+
+    .state_color_clicked {
+      color: cyan;
+    }
+
    /* text {
       display: block;
     }
