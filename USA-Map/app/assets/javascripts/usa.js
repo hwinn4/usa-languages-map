@@ -51,6 +51,7 @@ $(function(){
       .on('click', function(){
         $('.state_name').text(this.id);
         stateInfo(this.id);
+        $('path[style]').css("fill", "inherit");
         $(this).css("fill", "cyan");
         });
 
