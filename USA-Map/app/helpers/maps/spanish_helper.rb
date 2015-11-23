@@ -1,0 +1,2 @@
+module Maps::SpanishHelper
+end
